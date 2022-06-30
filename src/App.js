@@ -1,6 +1,7 @@
 import './scss/main.scss';
 import React, { useState } from 'react';
 import Welcome from './components/Welcome/Welcome';
+import NewCard from './components/NewCard/NewCard';
 
 function App() {
   const [showCards, setShowCards] = useState(false);
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       {
-        showCards ? <p>You have begun</p> : <Welcome startHandler={startHandler}/>
+        showCards ? <NewCard/> : <Welcome startHandler={startHandler}/>
       }
     </>
   );
