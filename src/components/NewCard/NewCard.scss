@@ -1,7 +1,13 @@
 .card {
-  border-radius: .2vw;
-  height: 5vw;
-  margin: 0 auto;
+  border: solid 2vw red;
+  border-radius: 2vw;
+  bottom: 0;
+  height: 50vw;
+  left: 50%;
+  margin: 0;
   padding: .5vw;
-  width: 2vw;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, 0);
+  width: 35vw;
 }

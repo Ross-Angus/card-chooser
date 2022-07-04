@@ -1,4 +1,5 @@
 import React from 'react';
+import logoDinero from '../../img/logos/dinero.png';
 
 // Welcomes the user, explains the premise.
 const NewCard = () => {
@@ -6,7 +7,7 @@ const NewCard = () => {
     <figure class="card">
       <p>
         <a href="https://dinerojs.com/">
-          <img src="/img/logo/dinero.png" alt="Dinero"/>
+          <img src={logoDinero} alt="Dinero"/>
         </a>
       </p>
       <figcaption>Dinero</figcaption>
