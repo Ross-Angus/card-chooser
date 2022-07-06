@@ -9,11 +9,13 @@ const NewCard = () => {
     <Draggable nodeRef={nodeRef}>
       <figure className="card" ref={nodeRef}>
         <p>
-          <a href="https://dinerojs.com/">
-            <img src={logoDinero} alt="Dinero"/>
-          </a>
+          <img src={logoDinero} alt="Dinero" draggable="false"/>
         </p>
-        <figcaption>Dinero</figcaption>
+        <figcaption>
+          <a href="https://dinerojs.com/">
+           Dinero
+          </a>
+        </figcaption>
       </figure>
     </Draggable>
   );

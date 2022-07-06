@@ -1,13 +1,16 @@
+$card-width: 35vw;
+
 .card {
+  background: #fff;
   border: solid 2vw #666;
   border-radius: 2vw;
   bottom: 0;
+  cursor: move;
   height: 50vw;
-  left: 50%;
+  left: calc(50% - 17.5vw);
   margin: 0;
   padding: .5vw;
   position: absolute;
   text-align: center;
-  transform: translate(-50%, 0);
-  width: 35vw;
+  width: $card-width;
 }
