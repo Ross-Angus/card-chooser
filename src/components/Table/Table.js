@@ -7,7 +7,7 @@ import Crypto from '../DropZones/Crypto/Crypto';
 // Contains the card and the two drop zones
 const Table = () => {
   return (
-    <main>
+    <main className="table">
       <JSLib/>
       <Crypto/>
       <NewCard/>
