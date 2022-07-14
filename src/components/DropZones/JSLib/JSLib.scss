@@ -1,3 +1,7 @@
 .jslib {
   left: 0;
+
+  &.hover {
+    background: rgba(255,0,0,.2)
+  }
 }
