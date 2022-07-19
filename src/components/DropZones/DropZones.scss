@@ -5,8 +5,10 @@
   top: 0;
   width: 30%;
 
-  // Doesn't work if you're dragging a card
   &:hover {
     background: rgba(256,0,0,0.2);
+  }
+  &.hover {
+    background: rgba(0,256,0,0.2);
   }
 }

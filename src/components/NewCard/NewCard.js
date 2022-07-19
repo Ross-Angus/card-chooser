@@ -11,17 +11,22 @@ const NewCard = (props) => {
   };
 
   const hoverHandler = (e, data) => {
-    props.passCardElement(data.node);
+    props.cardHover(data.node);
   };
 
   return (
-    <Draggable nodeRef={nodeRef} bounds="parent" onDrag={hoverHandler} onStop={choiceHandler}>
+    <Draggable
+      bounds="parent"
+      nodeRef={nodeRef}
+      onDrag={hoverHandler}
+      onStop={choiceHandler}
+    >
       <figure className="card" ref={nodeRef}>
         <p>
           <img src={logoDinero} alt="Dinero" draggable="false" />
         </p>
         <figcaption>
-          <a href="https://dinerojs.com/">Dinero</a>
+          <a href="https://dinerojs.com/" target="_blank">Dinero</a>
         </figcaption>
       </figure>
     </Draggable>

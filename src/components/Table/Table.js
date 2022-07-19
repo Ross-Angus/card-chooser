@@ -1,14 +1,18 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import NewCard from "../NewCard/NewCard";
 import JSLib from "../DropZones/JSLib/JSLib";
 import Crypto from "../DropZones/Crypto/Crypto";
 
 // Contains the card and the two drop zones
 const Table = () => {
-
-  // Storying the card element here, so when its position updates, it causes
-  // a re-render of the children
-  const [cardElement, setCardElement] = useState();
+  // The side dropzone elements
+  // These will initially be null but once the user drags the card,
+  // the child components will have rendered and populated these
+  // states.
+  const [jsLibEl, setJsLibEl] = useState();
+  const [cryptoEl, setCryptoEl] = useState();
+  const [jsLibHoverClass, setJsLibHoverClass] = useState("");
+  const [cryptoHoverClass, setCryptoHoverClass] = useState("");
 
   // Checking to see if two sets of bounds are intersecting
   // Pinched from bobbyhadz.com/blog/javascript-check-if-two-elements-overlap
@@ -28,15 +32,28 @@ const Table = () => {
     );
   };
 
-  const passCardElement = (el) => {
-    setCardElement(el);
+  const updateJsLib = (el) => {
+    setJsLibEl(el);
+  };
+
+  const updateCrypto = (el) => {
+    setCryptoEl(el);
+  };
+
+  const cardHover = (el) => {
+    elementsOverlap(el, jsLibEl)
+      ? setJsLibHoverClass(" hover")
+      : setJsLibHoverClass("");
+    elementsOverlap(el, cryptoEl)
+      ? setCryptoHoverClass(" hover")
+      : setCryptoHoverClass("");
   };
 
   return (
     <main className="table">
-      <JSLib elementsOverlap={elementsOverlap} cardElement={cardElement} />
-      <Crypto elementsOverlap={elementsOverlap} cardElement={cardElement} />
-      <NewCard passCardElement={passCardElement} />
+      <JSLib update={updateJsLib} hover={jsLibHoverClass} />
+      <Crypto update={updateCrypto} hover={cryptoHoverClass} />
+      <NewCard cardHover={cardHover} />
     </main>
   );
 };
