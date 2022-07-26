@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { elementsOverlap, judge } from '../../utility/utility';
 import NewCard from "../NewCard/NewCard";
 import JSLib from "../DropZones/JSLib/JSLib";
 import Crypto from "../DropZones/Crypto/Crypto";
@@ -14,24 +15,6 @@ const Table = () => {
   const [jsLibHoverClass, setJsLibHoverClass] = useState("");
   const [cryptoHoverClass, setCryptoHoverClass] = useState("");
 
-  // Checking to see if two sets of bounds are intersecting
-  // Pinched from bobbyhadz.com/blog/javascript-check-if-two-elements-overlap
-  const elementsOverlap = (el1, el2) => {
-    if (!el1 || !el2) {
-      return;
-    }
-
-    const domRect1 = el1.getBoundingClientRect();
-    const domRect2 = el2.getBoundingClientRect();
-
-    return !(
-      domRect1.top > domRect2.bottom ||
-      domRect1.right < domRect2.left ||
-      domRect1.bottom < domRect2.top ||
-      domRect1.left > domRect2.right
-    );
-  };
-
   const updateJsLib = (el) => {
     setJsLibEl(el);
   };
@@ -40,6 +23,8 @@ const Table = () => {
     setCryptoEl(el);
   };
 
+  // No choices are made with the hover, it's just used to highlight which
+  // drop zone the user is over.
   const cardHover = (el) => {
     elementsOverlap(el, jsLibEl)
       ? setJsLibHoverClass(" hover")
@@ -49,11 +34,17 @@ const Table = () => {
       : setCryptoHoverClass("");
   };
 
+  // The user has stopped dragging and has dropped the card
+  const cardDrop = (el) => {
+    elementsOverlap(el, jsLibEl) && console.log("You chose JavaScript");
+    elementsOverlap(el, cryptoEl) && console.log("You chose cryptocurrency");
+  };
+
   return (
     <main className="table">
       <JSLib update={updateJsLib} hover={jsLibHoverClass} />
       <Crypto update={updateCrypto} hover={cryptoHoverClass} />
-      <NewCard cardHover={cardHover} />
+      <NewCard cardHover={cardHover} cardDrop={cardDrop}/>
     </main>
   );
 };

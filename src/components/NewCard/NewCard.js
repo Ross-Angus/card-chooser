@@ -12,6 +12,7 @@ const NewCard = (props) => {
 
   const hoverHandler = (e, data) => {
     props.cardHover(data.node);
+    // Might need to add stuff in here to handle subtle card rotation, table perspective changes etc.
   };
 
   return (
@@ -26,7 +27,7 @@ const NewCard = (props) => {
           <img src={logoDinero} alt="Dinero" draggable="false" />
         </p>
         <figcaption>
-          <a href="https://dinerojs.com/" target="_blank">Dinero</a>
+          <a href="https://dinerojs.com/" target="_blank" rel="noreferrer">Dinero</a>
         </figcaption>
       </figure>
     </Draggable>
