@@ -1,19 +1,22 @@
 import React from "react";
 import Draggable from "react-draggable";
-import logoDinero from "../../img/logos/dinero.png";
+import { judge } from "../../utility/utility";
+import Logo from "../../img/logos/bongger.png";
 
 // Generates a new, draggable card from the bottom of the screen
 const NewCard = (props) => {
   const nodeRef = React.useRef(null);
 
   const choiceHandler = (e, data) => {
-    // console.log(data.node);
+    props.cardDrop(data.node);
   };
 
   const hoverHandler = (e, data) => {
     props.cardHover(data.node);
     // Might need to add stuff in here to handle subtle card rotation, table perspective changes etc.
   };
+
+  const card = props.currentCard;
 
   return (
     <Draggable
@@ -23,12 +26,8 @@ const NewCard = (props) => {
       onStop={choiceHandler}
     >
       <figure className="card" ref={nodeRef}>
-        <p>
-          <img src={logoDinero} alt="Dinero" draggable="false" />
-        </p>
-        <figcaption>
-          <a href="https://dinerojs.com/" target="_blank" rel="noreferrer">Dinero</a>
-        </figcaption>
+        <p><img src={card.logo} alt={card.name} draggable="false" /></p>
+        <figcaption>{card.name}</figcaption>
       </figure>
     </Draggable>
   );
