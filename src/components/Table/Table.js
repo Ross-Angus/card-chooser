@@ -14,7 +14,7 @@ const Table = () => {
   const [cryptoEl, setCryptoEl] = useState();
   const [jsLibHoverClass, setJsLibHoverClass] = useState("");
   const [cryptoHoverClass, setCryptoHoverClass] = useState("");
-  const [currentCard, setCurrentCard] = useState(answers[0]);
+  const [currentCard, setCurrentCard] = useState(0);
 
   const updateJsLib = (el) => {
     setJsLibEl(el);
@@ -38,15 +38,21 @@ const Table = () => {
   // The user has stopped dragging and has dropped the card
   const cardDrop = (el) => {
     // console.log(el);
-    elementsOverlap(el, jsLibEl) && console.log("You chose JavaScript");
-    elementsOverlap(el, cryptoEl) && console.log("You chose cryptocurrency");
+    if (elementsOverlap(el, jsLibEl)) {
+      answers[currentCard].userAnswer = "js";
+      setCurrentCard(currentCard + 1);
+    };
+    if(elementsOverlap(el, cryptoEl)) {
+      answers[currentCard].userAnswer = "crypto";
+      setCurrentCard(currentCard + 1);
+    }
   };
 
   return (
     <main className="table">
       <JSLib update={updateJsLib} hover={jsLibHoverClass} />
       <Crypto update={updateCrypto} hover={cryptoHoverClass} />
-      <NewCard currentCard={currentCard} cardHover={cardHover} cardDrop={cardDrop}/>
+      <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop}/>
     </main>
   );
 };
