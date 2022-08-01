@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { elementsOverlap, judge, answers } from '../../utility/utility';
-import NewCard from "../NewCard/NewCard";
+import Feedback from "../Feedback/Feedback";
 import JSLib from "../DropZones/JSLib/JSLib";
 import Crypto from "../DropZones/Crypto/Crypto";
+import NewCard from "../NewCard/NewCard";
 
 // Contains the card and the two drop zones
 const Table = () => {
@@ -14,6 +15,7 @@ const Table = () => {
   const [cryptoEl, setCryptoEl] = useState();
   const [jsLibHoverClass, setJsLibHoverClass] = useState("");
   const [cryptoHoverClass, setCryptoHoverClass] = useState("");
+  // A counter, which moves through the answers Array
   const [currentCard, setCurrentCard] = useState(0);
 
   const updateJsLib = (el) => {
@@ -50,6 +52,7 @@ const Table = () => {
 
   return (
     <main className="table">
+      <Feedback index={currentCard}/>
       <JSLib update={updateJsLib} hover={jsLibHoverClass} />
       <Crypto update={updateCrypto} hover={cryptoHoverClass} />
       <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop}/>
