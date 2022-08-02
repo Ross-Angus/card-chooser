@@ -34,14 +34,6 @@ export const elementsOverlap = (el1, el2) => {
   );
 };
 
-
-// Determins if the user has made the correct choice or not
-export const judge = (card, category) => {
-  for (const answer in answers) {
-    console.log("Name:", answer.name, " | Type:", answer.type);
-  }
-};
-
 export const answers = [
   {
     "name": "Dinero",

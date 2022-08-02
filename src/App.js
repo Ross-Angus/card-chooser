@@ -1,5 +1,5 @@
 import './scss/main.scss';
-import React, { useState } from 'react';
+import React from 'react';
 import Table from './components/Table/Table';
 
 // This used to switch between a welcome screen and the main application

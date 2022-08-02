@@ -8,4 +8,11 @@
   right: 25vw;
   top: 1em;
   z-index: 10;
+
+  &.correct {
+    background: rgba(0,255,0,0.2);
+  }
+  &.incorrect {
+    background: rgba(255,0,0,0.2);
+  }
 }

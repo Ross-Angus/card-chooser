@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { elementsOverlap, judge, answers } from '../../utility/utility';
+import { elementsOverlap, answers } from '../../utility/utility';
 import Feedback from "../Feedback/Feedback";
 import JSLib from "../DropZones/JSLib/JSLib";
 import Crypto from "../DropZones/Crypto/Crypto";
@@ -52,10 +52,18 @@ const Table = () => {
 
   return (
     <main className="table">
-      <Feedback index={currentCard}/>
-      <JSLib update={updateJsLib} hover={jsLibHoverClass} />
-      <Crypto update={updateCrypto} hover={cryptoHoverClass} />
-      <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop}/>
+      {
+        answers.length > currentCard ? (
+          <>
+            <Feedback index={currentCard}/>
+            <JSLib update={updateJsLib} hover={jsLibHoverClass} />
+            <Crypto update={updateCrypto} hover={cryptoHoverClass} />
+            <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop}/>
+          </>
+        ) : (
+          <h1>Congratulations!</h1>
+        )
+      }
     </main>
   );
 };
