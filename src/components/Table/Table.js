@@ -61,7 +61,7 @@ const Table = () => {
             <Crypto update={updateCrypto} hover={cryptoHoverClass} />
             <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop}/>
           </>
-        ) : <Results answers={answers}/>
+        ) : <Results answers={answers} setCurrentCard={setCurrentCard}/>
       }
     </main>
   );
