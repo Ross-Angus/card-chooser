@@ -1,7 +1,5 @@
 import React from "react";
 import Draggable from "react-draggable";
-import { judge } from "../../utility/utility";
-import Logo from "../../img/logos/bongger.png";
 
 // Generates a new, draggable card from the bottom of the screen
 const NewCard = (props) => {

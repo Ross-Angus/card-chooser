@@ -4,6 +4,7 @@ import Feedback from "../Feedback/Feedback";
 import JSLib from "../DropZones/JSLib/JSLib";
 import Crypto from "../DropZones/Crypto/Crypto";
 import NewCard from "../NewCard/NewCard";
+import Results from "../Results/Results";
 
 // Contains the card and the two drop zones
 const Table = () => {
@@ -60,9 +61,7 @@ const Table = () => {
             <Crypto update={updateCrypto} hover={cryptoHoverClass} />
             <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop}/>
           </>
-        ) : (
-          <h1>Congratulations!</h1>
-        )
+        ) : <Results answers={answers}/>
       }
     </main>
   );
