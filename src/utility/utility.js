@@ -1,7 +1,7 @@
 // Importing all the logos, so I can pass them as part of the answers object below
 import LogoBongger from "../img/logos/bongger.png";
 import LogoCoinye from "../img/logos/coinye.png";
-import LogoCthulhuOfferings from "../img/logos/cthulhu-offerings.jpg";
+import LogoCthulhuOfferings from "../img/logos/cthulhu-offerings.png";
 import LogoDeepOnion from "../img/logos/deep-onion.svg";
 import LogoDinero from "../img/logos/dinero.png";
 import LogoErgo from "../img/logos/ergo.svg";
