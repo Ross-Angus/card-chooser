@@ -13,7 +13,7 @@ import LogoQuasar from "../img/logos/quasar.svg";
 import LogoRiot from "../img/logos/riot.svg";
 import LogoSentinel from "../img/logos/sentinel.svg";
 import LogoSinon from "../img/logos/sinon.png";
-import LogoVorlon from "../img/logos/vorlon.svg";
+import LogoVorlon from "../img/logos/vorlon.png";
 import LogoVulcan from "../img/logos/vulcan.svg";
 
 // Checking to see if two sets of bounds are intersecting

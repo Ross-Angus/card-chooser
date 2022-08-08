@@ -1,28 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
-    <title>technological</title>
-    <desc>Created with Sketch.</desc>
-    <defs/>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="technological" fill-rule="nonzero">
-            <circle id="Oval" fill="#E6F3FF" cx="256" cy="256" r="256"/>
-            <rect id="Rectangle-path" fill="#FD8469" x="152.135" y="113.778" width="28.444" height="56.889"/>
-            <rect id="Rectangle-path" fill="#FC6F58" x="331.421" y="113.778" width="28.444" height="56.889"/>
-            <rect id="Rectangle-path" fill="#31BAFD" x="199.111" y="182.734" width="113.778" height="56.889"/>
-            <rect id="Rectangle-path" fill="#2B9ED8" x="256" y="182.734" width="56.889" height="56.889"/>
-            <rect id="Rectangle-path" fill="#31BAFD" x="162.047" y="227.556" width="31.323" height="142.222"/>
-            <rect id="Rectangle-path" fill="#2B9ED8" x="318.629" y="227.556" width="31.323" height="142.222"/>
-            <path d="M319.928,199.542 L192.071,199.542 C180.25,199.542 170.667,189.959 170.667,178.138 L170.667,107.17 C170.667,95.349 180.25,85.764 192.071,85.764 L319.928,85.764 C331.749,85.764 341.334,95.347 341.334,107.17 L341.334,178.138 C341.333,189.959 331.75,199.542 319.928,199.542 Z" id="Shape" fill="#324A5E"/>
-            <g id="Group" transform="translate(184.000000, 85.000000)" fill="#2B3B4E">
-                <path d="M135.928,0.764 L72,0.764 L72,114.542 L135.928,114.542 C147.749,114.542 157.334,104.959 157.334,93.136 L157.334,22.17 C157.333,10.347 147.75,0.764 135.928,0.764 Z" id="Shape"/>
-                <path d="M72,370.542 L72,370.542 C32.726,370.542 0.889,338.705 0.889,299.431 L0.889,142.987 L143.111,142.987 L143.111,299.431 C143.111,338.705 111.274,370.542 72,370.542 Z" id="Shape"/>
-            </g>
-            <path d="M256,227.987 L256,455.543 C295.272,455.543 327.111,423.706 327.111,384.432 L327.111,227.987 L256,227.987 Z" id="Shape" fill="#1B2A38"/>
-            <circle id="Oval" fill="#31BAFD" cx="210.954" cy="142.653" r="26.721"/>
-            <circle id="Oval" fill="#B5F1F4" cx="210.954" cy="142.653" r="13.765"/>
-            <circle id="Oval" fill="#2B9ED8" cx="301.028" cy="142.653" r="26.721"/>
-            <circle id="Oval" fill="#84DBFF" cx="301.028" cy="142.653" r="13.765"/>
-        </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Sentinel</title>
+  <circle cx="254.1" cy="256" r="256" fill="#e6f3ff"/>
+  <path fill="#fd8469" d="M152 114h28v57h-28z"/>
+  <path fill="#fc6f58" d="M331 114h28v57h-28z"/>
+  <path fill="#31bafd" d="M162 228h31v142h-31zm37-45h114v57H199z"/>
+  <path fill="#2b9ed8" d="M319 228h31v142h-31Zm-63-45h57v57h-57Z"/>
+  <path fill="#324a5e" d="M320 200H192c-12 0-21-10-21-22v-71c0-12 9-21 21-21h128c12 0 21 9 21 21v71c0 12-9 22-21 22z"/>
+  <path fill="#2b3b4e" d="M320 86h-64v114h64c12 0 21-10 21-22v-71c0-12-9-21-21-21Zm-64 370c-39 0-71-32-71-72V228h142v156c0 40-32 72-71 72Z"/>
+  <path fill="#1b2a38" d="M256 228v228c39 0 71-32 71-72V228Z"/>
+  <circle cx="211" cy="142.7" r="26.7" fill="#31bafd"/>
+  <circle cx="211" cy="142.7" r="13.8" fill="#b5f1f4"/>
+  <circle cx="301" cy="142.7" r="26.7" fill="#2b9ed8"/>
+  <circle cx="301" cy="142.7" r="13.8" fill="#84dbff"/>
 </svg>
