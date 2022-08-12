@@ -59,7 +59,7 @@ const Table = () => {
             <Feedback index={currentCard}/>
             <JSLib update={updateJsLib} hover={jsLibHoverClass} />
             <Crypto update={updateCrypto} hover={cryptoHoverClass} />
-            <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop}/>
+            <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop} key={currentCard.name}/>
           </>
         ) : <Results answers={answers} setCurrentCard={setCurrentCard}/>
       }
