@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { elementsOverlap, answers } from '../../utility/utility';
+import { elementsOverlap, answers } from "../../utility/utility";
 import Feedback from "../Feedback/Feedback";
 import JSLib from "../DropZones/JSLib/JSLib";
 import Crypto from "../DropZones/Crypto/Crypto";
@@ -16,6 +16,8 @@ const Table = () => {
   const [cryptoEl, setCryptoEl] = useState();
   const [jsLibHoverClass, setJsLibHoverClass] = useState("");
   const [cryptoHoverClass, setCryptoHoverClass] = useState("");
+  const [cardClass, setCardClass] = useState("card");
+  const [dragPosition, setDragPosition] = React.useState(null);
   // A counter, which moves through the answers Array
   const [currentCard, setCurrentCard] = useState(0);
 
@@ -41,28 +43,50 @@ const Table = () => {
   // The user has stopped dragging and has dropped the card
   const cardDrop = (el) => {
     // console.log(el);
+    let answered = false;
     if (elementsOverlap(el, jsLibEl)) {
       answers[currentCard].userAnswer = "js";
-      setCurrentCard(currentCard + 1);
-    };
-    if(elementsOverlap(el, cryptoEl)) {
+      answered = true;
+    }
+    if (elementsOverlap(el, cryptoEl)) {
       answers[currentCard].userAnswer = "crypto";
+      answered = true;
+    }
+
+    if (answered) {
       setCurrentCard(currentCard + 1);
+      // Plays the animation of the card falling down
+      setCardClass("card drop");
+      // Waits for the animation to finish
+      setTimeout(() => {
+        // Removes the falling down class
+        setCardClass("card");
+        // Resets the card's initial position
+        setDragPosition({ x: 0, y: 0 });
+      }, 1000);
+      answered = false;
     }
   };
 
   return (
     <main className="table">
-      {
-        answers.length > currentCard ? (
-          <>
-            <Feedback index={currentCard}/>
-            <JSLib update={updateJsLib} hover={jsLibHoverClass} />
-            <Crypto update={updateCrypto} hover={cryptoHoverClass} />
-            <NewCard currentCard={answers[currentCard]} cardHover={cardHover} cardDrop={cardDrop} key={currentCard.name}/>
-          </>
-        ) : <Results answers={answers} setCurrentCard={setCurrentCard}/>
-      }
+      {answers.length > currentCard ? (
+        <>
+          <Feedback index={currentCard} />
+          <JSLib update={updateJsLib} hover={jsLibHoverClass} />
+          <Crypto update={updateCrypto} hover={cryptoHoverClass} />
+          <NewCard
+            cardClass={cardClass}
+            cardDrop={cardDrop}
+            cardHover={cardHover}
+            currentCard={answers[currentCard]}
+            dragPosition={dragPosition}
+            key={currentCard.name}
+          />
+        </>
+      ) : (
+        <Results answers={answers} setCurrentCard={setCurrentCard} />
+      )}
     </main>
   );
 };

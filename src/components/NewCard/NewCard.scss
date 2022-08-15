@@ -13,4 +13,8 @@ $card-width: 35vw;
   position: absolute;
   text-align: center;
   width: $card-width;
+
+  &.drop {
+    border-color: red;
+  }
 }
